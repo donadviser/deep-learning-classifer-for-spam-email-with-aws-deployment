@@ -1,0 +1,8 @@
+
+artefacts_root: artefacts
+
+data_ingestion:
+  root_dir: artefacts/data_ingestion
+  source_URL: https://github.com/donadviser/datasets/raw/master/data-don/spam_email.zip
+  local_data_file: artefacts/data_ingestion/data.zip
+  unzip_dir: artefacts/data_ingestion
