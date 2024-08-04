@@ -15,6 +15,21 @@ This project focuses on building and deploying a machine learning model for spam
 ## Motivation
 The motivation behind this project is to demonstrate the end-to-end process of deploying a machine learning model, emphasizing the importance of deployment skills for aspiring Data Scientists and ML engineers.
 
+## Workflows
+
+The workflow begins with creating a virtual environment, `template.py`, `setup.py`, and `requirements.txt` to establish the file and directory structure and create a package. The remainder of the workflow follows a loop of the steps below:
+
+1. Update `config.yaml`
+2. Update `secrets.yaml` [Optional]
+3. Update `params.yaml`
+4. Update the entity
+5. Update the configuration manager in `src/config`
+6. Update the components
+7. Update the pipeline
+8. Update `main.py`
+9. Update `dvc.yaml`
+
+
 ## Tech Stacks
  - **Python:** Programming language used for data preprocessing, model training, and deployment.
  - **TensorFlow/Keras:** Deep learning framework used to build and train the Neural Network model.
@@ -33,4 +48,4 @@ The motivation behind this project is to demonstrate the end-to-end process of d
  
  Your feedback and contributions are greatly appreciated!
  
-*By Derrick Njobuenwu, PhD*"
+*By Derrick Njobuenwu, PhD*

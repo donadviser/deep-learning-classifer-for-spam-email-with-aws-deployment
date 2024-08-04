@@ -1,0 +1,16 @@
+
+matplotlib
+scikit-learn
+imblearn
+seaborn
+tensorflow
+wordcloud
+types-PyYAML
+tqdm
+python-box
+pyYAML
+notebook
+joblib
+streamlit
+-e .
+
