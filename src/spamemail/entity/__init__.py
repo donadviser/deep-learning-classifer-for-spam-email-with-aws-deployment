@@ -3,4 +3,5 @@ from spamemail.entity.config_entity import (
     DataValidationConfig,
     DataTransformationConfig,
     ModelTrainerConfig,
+    ModelEvaluationConfig,
 )

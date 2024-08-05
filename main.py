@@ -5,6 +5,7 @@ from spamemail.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipe
 from spamemail.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from spamemail.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
 from spamemail.pipeline.stage_04_model_training import ModelTrainerTrainingPipeline
+from spamemail.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
 
 STAGE_NAME = "Data Ingestion Stage"
 
@@ -43,8 +44,19 @@ except Exception as e:
 STAGE_NAME = "Model Trainer stage"
 try:
    logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
-   data_ingestion = ModelTrainerTrainingPipeline()
-   data_ingestion.main(res)
+   model_trainer = ModelTrainerTrainingPipeline()
+   model_trainer.main(res)
+   logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logging.error(f"An error occurred during stage {STAGE_NAME}: {str(e)}")
+    raise CustomException(e, sys)
+
+
+STAGE_NAME = "Model Evaluation Stage"
+try:
+   logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+   model_evaluation = ModelEvaluationTrainingPipeline()
+   model_evaluation.main(res)
    logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
     logging.error(f"An error occurred during stage {STAGE_NAME}: {str(e)}")

@@ -6,6 +6,7 @@ from spamemail.entity import (
     DataValidationConfig,
     DataTransformationConfig,
     ModelTrainerConfig,
+    ModelEvaluationConfig,
     )
 
 
@@ -101,3 +102,20 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        schema =  self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            model_path = config.model_path,
+            target_column = schema.Category,
+            metrics_json_file = config.metrics_json_file
+        )
+
+        return model_evaluation_config
