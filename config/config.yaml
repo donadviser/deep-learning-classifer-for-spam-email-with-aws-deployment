@@ -12,3 +12,8 @@ data_validation:
   root_dir: artefacts/data_validation
   unzip_data_dir: artefacts/data_ingestion/email.csv
   STATUS_FILE: artefacts/data_validation/status.txt
+
+
+data_transformation:
+  root_dir: artefacts/data_transformation
+  data_path: artefacts/data_ingestion/email.csv

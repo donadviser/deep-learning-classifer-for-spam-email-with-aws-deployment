@@ -102,10 +102,10 @@ class DataValiadtion:
 
         except pd.errors.ParserError as e:
             # Handle specific pandas parsing errors
-            raise CustomException(f"Error parsing data file: {e}", logging.error)
+            raise CustomException(f"Error parsing data file: {e}", sys)
         except FileNotFoundError as e:
             # Handle file not found error
-            raise CustomException(f"Data file not found: {e}", logging.error)
+            raise CustomException(f"Data file not found: {e}", sys)
         except Exception as e:
             # Catch other exceptions for robustness
-            raise CustomException(f"Unexpected error during validation: {e}", logging.exception)
+            raise CustomException(f"Unexpected error during validation: {e}", sys)
