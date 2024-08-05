@@ -1,4 +1,4 @@
-Simple_nn:
+simple_nn:
   optimizer: 'adam'
   loss: 'binary_crossentropy'
   metrics: ['accuracy']

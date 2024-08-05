@@ -5,7 +5,8 @@ from spamemail.entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
-)
+    ModelTrainerConfig,
+    )
 
 
 class ConfigurationManager:
@@ -77,3 +78,26 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.simple_nn
+        schema =  self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir= config.root_dir,
+            x_test_path= config.x_test_path,
+            x_train_path= config.x_train_path,
+            y_test_path= config.y_test_path,
+            y_train_path= config.y_train_path,
+            model_name= config.model_name,
+            optimizer= params.optimizer,
+            loss= params.loss,
+            metrics= params.metrics,            
+            target_column= schema.Category
+        )
+
+        return model_trainer_config

@@ -17,3 +17,12 @@ data_validation:
 data_transformation:
   root_dir: artefacts/data_transformation
   data_path: artefacts/data_ingestion/email.csv
+
+
+model_trainer:
+  root_dir: artefacts/model_trainer
+  x_test_path: artefacts/data_transformation/x_test.csv
+  x_train_path: artefacts/data_transformation/x_train.csv
+  y_test_path: artefacts/data_transformation/y_test.csv
+  y_train_path: artefacts/data_transformation/y_train.csv
+  model_name: model.h5
