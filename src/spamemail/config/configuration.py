@@ -1,6 +1,10 @@
+from spamemail import logging
 from spamemail.utils.common import create_directories, read_yaml
 from spamemail.constants import *
-from spamemail.entity import DataIngestionConfig
+from spamemail.entity import (
+    DataIngestionConfig,
+    DataValidationConfig,
+)
 
 
 class ConfigurationManager:
@@ -19,6 +23,19 @@ class ConfigurationManager:
         
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
+        """Retrieves and validates data ingestion configuration.
+
+        Creates necessary directories if they don't exist.
+
+        Args:
+            self: The object containing the configuration.
+
+        Returns:
+            DataIngestionConfig: The parsed configuration.
+
+        Raises:
+            ValueError: If required configuration values are missing or invalid.
+        """
         config = self.config.data_ingestion
         create_directories([config.root_dir])
 
@@ -28,4 +45,21 @@ class ConfigurationManager:
             local_data_file = config.local_data_file,
             unzip_dir = config.unzip_dir,
         )
+        logging.info(f"Data ingestion configuration loaded: {data_ingestion_config}")
         return data_ingestion_config
+    
+
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config.data_validation
+        schema = self.schema.COLUMNS
+        
+        create_directories([config.root_dir])
+
+        data_validation_config = DataValidationConfig(
+            root_dir=config.root_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            unzip_data_dir = config.unzip_data_dir,
+            all_schema = schema,
+        )
+
+        return data_validation_config

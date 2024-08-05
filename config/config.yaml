@@ -6,3 +6,9 @@ data_ingestion:
   source_URL: https://github.com/donadviser/datasets/raw/master/data-don/spam_email.zip
   local_data_file: artefacts/data_ingestion/data.zip
   unzip_dir: artefacts/data_ingestion
+
+
+data_validation:
+  root_dir: artefacts/data_validation
+  unzip_data_dir: artefacts/data_ingestion/email.csv
+  STATUS_FILE: artefacts/data_validation/status.txt

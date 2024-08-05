@@ -16,6 +16,11 @@ class DataIngestion:
 
     
     def download_file(self) -> None:
+        """Downloads a file from a specified URL if it does not already exist locally.
+        
+        Raises:
+            CustomException: If there is an error during the download process.
+        """
         try:
             if not os.path.exists(self.config.local_data_file):
                 filename, headers = request.urlretrieve(
