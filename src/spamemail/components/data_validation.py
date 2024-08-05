@@ -30,24 +30,6 @@ class DataValiadtion:
                             writing the validation status.
         """
         try:
-
-            # Read data using pandas
-        data = pd.read_csv(data_dir)
-        all_cols = list(data.columns)
-
-        logger.info(f"All columns in the file: {all_cols}")
-        logger.info(f"Schema keys: {schema_keys}")
-
-        # Validate all columns are present in the schema
-        validation_status = all(col in schema_keys for col in all_cols)
-
-        # Write validation status to file atomically (avoid partial writes)
-        with open(self.config.STATUS_FILE, 'w') as f:
-            f.write(f"Validation status: {validation_status}")
-
-        logger.info(f"Validation status: {validation_status}")
-        return validation_status
-    
             validation_status = None
 
             data = pd.read_csv(self.config.unzip_data_dir)

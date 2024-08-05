@@ -19,7 +19,6 @@ class DataValidationTrainingPipeline:
         data_validation.validate_all_columns()
 
 
-
 if __name__ == '__main__':
     try:
         logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
