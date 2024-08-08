@@ -26,3 +26,4 @@ if __name__ == '__main__':
         logging.info(f'Completed {STAGE_NAME} pipeline successfully.')
     except CustomException as e:
         raise CustomException(e, sys)
+    
