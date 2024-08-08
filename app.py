@@ -5,8 +5,8 @@ import os
 from PIL import Image
 
 # File paths
-vectorizer_filename = 'harshithvarma007/spam-email/main/artifacts/data_transformation/count_vectorizer.pkl'
-model_filename = 'harshithvarma007/spam-email/main/artifacts/model_trainer/model.h5'
+vectorizer_filename = 'artefacts/data_transformation/count_vectorizer.pkl'
+model_filename = 'artefacts/model_trainer/model.h5'
 
 # Function to load vectorizer and model
 def load_model_and_vectorizer():
@@ -98,19 +98,19 @@ st.markdown("### Resources regarding the above project can be found below:")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    github_icon = Image.open('harshithvarma007/spam-email/main/assests\github-mark.png')
+    github_icon = Image.open('assests/github-mark.png')
     st.image(github_icon, width=50)
-    st.markdown("[GitHub](https://github.com/Harshithvarma007/Spam-email)", unsafe_allow_html=True)
+    st.markdown("[GitHub](https://github.com/donadviser/deep-learning-classifer-for-spam-email-with-aws-deployment)", unsafe_allow_html=True)
 
 with col2:
-    kaggle_icon = Image.open('harshithvarma007/spam-email/main/assests/4373210_kaggle_logo_logos_icon.png')
+    kaggle_icon = Image.open('assests/4373210_kaggle_logo_logos_icon.png')
     st.image(kaggle_icon, width=50)
-    st.markdown("[Kaggle](https://www.kaggle.com/code/harshithvarma007/spam-email-classification-98-accuracy)", unsafe_allow_html=True)
+    st.markdown("[Kaggle](https://www.kaggle.com/)", unsafe_allow_html=True)
 
 with col3:
-    medium_icon = Image.open('harshithvarma007/spam-email/main/assests\medium.png')
+    medium_icon = Image.open('assests/medium.png')
     st.image(medium_icon, width=50)
-    st.markdown("[Medium](https://medium.com/@harshith007varma007/end-to-end-machine-learning-project-part-i-c29c2b982055)", unsafe_allow_html=True)
+    st.markdown("[Medium](https://medium.com/@donadviser)", unsafe_allow_html=True)
 
 # To run the Streamlit app, save this script as `app.py` and run the following command:
 # streamlit run app.py
