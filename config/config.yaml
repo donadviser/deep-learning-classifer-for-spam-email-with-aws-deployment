@@ -26,8 +26,10 @@ model_trainer:
   y_test_path: artefacts/data_transformation/y_test.csv
   y_train_path: artefacts/data_transformation/y_train.csv
   model_name: model.h5
+  model_figure_path: artefacts/model_trainer/model
 
 model_evaluation:
   root_dir: artefacts/model_evaluation
   model_path: artefacts/model_trainer/model.h5
   metrics_json_file: artefacts/model_evaluation/metrics.json
+  metric_figure_path: artefacts/model_evaluation/metric

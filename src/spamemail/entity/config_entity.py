@@ -35,6 +35,7 @@ class ModelTrainerConfig:
     loss: str
     metrics: list
     target_column: str
+    model_figure_path: Path
 
 
 @dataclass(frozen=True)
@@ -43,3 +44,4 @@ class ModelEvaluationConfig:
     model_path: Path
     target_column: str
     metrics_json_file: Path
+    metric_figure_path: Path

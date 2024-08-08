@@ -98,7 +98,8 @@ class ConfigurationManager:
             optimizer= params.optimizer,
             loss= params.loss,
             metrics= params.metrics,            
-            target_column= schema.Category
+            target_column= schema.Category,
+            model_figure_path = config.model_figure_path
         )
 
         return model_trainer_config
@@ -115,7 +116,8 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             model_path = config.model_path,
             target_column = schema.Category,
-            metrics_json_file = config.metrics_json_file
+            metrics_json_file = config.metrics_json_file,
+            metric_figure_path = config.metric_figure_path,
         )
 
         return model_evaluation_config

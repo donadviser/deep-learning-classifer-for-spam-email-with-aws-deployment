@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 from spamemail import logging
 from spamemail import CustomException
+from spamemail.constants import TIMESTAMP
 
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
@@ -79,4 +80,11 @@ class ModelTrainer:
         plt.legend(['Train', 'Validation'], loc='upper left')
 
         plt.tight_layout()
-        plt.show()
+        #plt.show()
+        
+        # Save plot with a timestamp
+        filename = f"{self.config.model_figure_path}_accuracy_loss_{TIMESTAMP}.png"
+        logging.info(f"Save model accuracy loss to {filename}")
+        plt.savefig(filename)
+        plt.close()
+        logging.info(f'Model accuracy and loss saved as {filename}')
