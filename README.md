@@ -71,6 +71,7 @@ sudo apt install git curl unzip tar make sudo vim wget -y
 
 ```bash
 git clone "Your-repository"
+cd "Your-repository"
 ```
 
 ```bash
@@ -119,10 +120,11 @@ newgrp docker
 
 ```bash
 git clone "your-project"
+cd "your-project"
 ```
 
 ```bash
-docker build -t entbappy/stapp:latest . 
+docker build -t donadviser/stapp:latest . 
 ```
 
 ```bash
@@ -130,7 +132,7 @@ docker images -a
 ```
 
 ```bash
-docker run -d -p 8501:8501 entbappy/stapp 
+docker run -d -p 8501:8501 donadviser/stapp 
 ```
 
 ```bash
@@ -150,16 +152,20 @@ docker login
 ```
 
 ```bash
-docker push entbappy/stapp:latest 
+docker push donadviser/stapp:latest 
 ```
 
 ```bash
-docker rmi entbappy/stapp:latest
+docker rmi donadviser/stapp:latest
 ```
 
 ```bash
-docker pull entbappy/stapp
+docker pull donadviser/stapp
 ```
+
+## Reference
+
+- **YouTube Video:** [YouTube Video](https://www.youtube.com/watch?v=DflWqmppOAg)
  
  ## Let's Connect
  For any issues or questions related to this project, feel free to reach out through the following channels:
